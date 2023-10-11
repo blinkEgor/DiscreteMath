@@ -1,0 +1,8 @@
+// Алгоритм вычисления модуля числа n и присвоение результата переменной abc
+
+begin
+    Input n;
+    if n < 0 then abc:= -n
+             else abc:= n;
+    Output abc;
+end

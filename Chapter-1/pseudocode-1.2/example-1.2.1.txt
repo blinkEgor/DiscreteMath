@@ -1,0 +1,6 @@
+// Алгоритм сложения двух чисел
+
+begin
+    Input First and Second;
+    Sum:= First + Second;
+end
