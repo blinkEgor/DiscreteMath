@@ -1,0 +1,8 @@
+// ответ = 14
+
+CG=1;
+CE=2; delet GE=3;
+CD=3; delet ED=5;
+GF=3; delet FE=4;
+FA=2;
+AB=3; delet BC=3;
