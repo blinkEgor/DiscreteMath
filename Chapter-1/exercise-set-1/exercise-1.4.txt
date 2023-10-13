@@ -1,0 +1,15 @@
+initially first = 1
+initially second = 1
+current next = 2
+current next = 3
+current next = 5
+current next = 8
+current next = 13
+current next = 21
+current next = 34
+current next = 55
+current next = 89
+stop loop, becaus next = 144 > 100
+
+каждое новое число будет равно сумме предыдущих двух
+последовательность Фибоначчи
