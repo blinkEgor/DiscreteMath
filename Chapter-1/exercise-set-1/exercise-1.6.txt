@@ -1,0 +1,11 @@
+We have 7 peaks
+We have 11 number of shape
+[
+  'AB = 3', 'AF = 2',
+  'BC = 3', 'BG = 6',
+  'CD = 3', 'CE = 2',
+  'CG = 1', 'DE = 5',
+  'EF = 4', 'EG = 3',
+  'FG = 3'
+]
+Sum shapeMin = 14
