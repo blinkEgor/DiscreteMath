@@ -11,10 +11,9 @@ const shape = [
     [0, 0, 0, 0, 0, 0, 0]
 ];
 
-let num = [];
-let str = [];
-
 function numOfShape() {
+    let num = [];
+    let str = [];
     for(let i = 0; i < shape.length; i++) {
         for(let j = 0; j < shape[i].length; j++) {
             if(shape[i][j] != 0) {
@@ -28,32 +27,58 @@ function numOfShape() {
 }
 numOfShape();
 
-num.sort();
-
-let shapeMinStr = [];
-
 function shortcut() {
-    let shapeMinCount = [[],[],[],[],[],[],[]];
+    let shapeMin = [[],[],[],[],[],[],[]];
     for(let i = 0; i < shape.length; i++) {
         for(let j = 0; j < shape[i].length; j++) {
-            if(shape[i][j] != 0) {
-                shapeMinCount[j].push(shape[i][j]);
+            shapeMin[i].push(shape[j][i]);
+        }
+    }
+    // console.log(shapeMin)
+    
+    let max;
+    let one = 0;
+    for(let i = 0; i < shapeMin.length; i++) {
+        max = Math.max.apply(null, shapeMin[i]);
+        for(let o = 0; o < shapeMin.length; o++) {
+            if(shapeMin[i][o] != 0) {
+                one++;
+            }
+        }
+        for(let j = 0; j < shapeMin.length; j++) {
+            
+            if(shapeMin[i][j] != 0) {
+                if(one > 1) {
+                    if(shapeMin[i][j] == max) {
+                        one = 0;
+                        shapeMin[i][j] = 0 
+                        // break;
+                    }
+                } else {
+                    one = 0;
+                }
             }
         }
     }
 
-    let shapeMin = [];
-    for(let i = 0; i < shapeMinCount.length; i++) {
-        let c = Math.min.apply(null, shapeMinCount[i]);
-        if(c != Infinity) {
-            shapeMin.push(c);
+    let shapeRes = [[],[],[],[],[],[],[]];
+    for(let i = 0; i < shapeMin.length; i++) {
+        for(let j = 0; j < shapeMin[i].length; j++) {
+            shapeRes[i].push(shapeMin[j][i]);
         }
     }
-
-    let sum = shapeMin.reduce(function (x, y) {
-        return x + y;
-    }, 0);
-    console.log(`Sum shapeMin = ${sum}`);
-
+    let num = [];
+    let str = [];
+    for(let i = 0; i < shapeRes.length; i++) {
+        for(let j = 0; j < shapeRes[i].length; j++) {
+            if(shapeRes[i][j] != 0) {
+                num.push(shapeRes[j][i]);
+                str.push(`${peaks[i]}${peaks[j]} = ${shape[i][j]}`);
+            }
+        }
+    }
+    console.log('\nshortcut')
+    console.log(`We have ${num.length} number of shape`);
+    console.log(str);
 }
 shortcut();
