@@ -1,8 +1,0 @@
-// Алгоритм обмена значений двух переменных
-
-begin
-    Input One and Two;
-    Temp:= One;
-    One:= Two;
-    Two:= Temp;
-end
