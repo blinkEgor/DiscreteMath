@@ -2,13 +2,15 @@
 using namespace std;
 
 int main() {
-    int n=10,s=0,k=1;
+    int n,s=0;
+    cout<<"Upper limit of the amount: ";
+    cin>>n;
 
-    while(k<=n){
-        s=s+k*k;
-        k++;
+    while(n){
+        s+=n*n;
+        n--;
     }
-    cout<<"Sum of square from 1 to "<<n<<": "<<s<<endl;
+    cout<<"Sum of square: "<<s<<endl;
 
     system("pause>nul");
     return 0;
