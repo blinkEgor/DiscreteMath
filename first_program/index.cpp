@@ -6,11 +6,15 @@ int main() {
     cout<<"Upper limit of the amount: ";
     cin>>n;
 
-    while(n){
-        s+=n*n;
-        n--;
+    if(n>0) {
+        while(n){
+            s+=n*n;
+            n--;
+        }
+        cout<<"Sum of square: "<<s<<endl;
+    }else{
+        cout<<"Invalid value specified"<<endl;
     }
-    cout<<"Sum of square: "<<s<<endl;
 
     system("pause>nul");
     return 0;
