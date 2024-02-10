@@ -2,18 +2,20 @@
 using namespace std;
 
 int main() {
-    const int n=10;
-    int arr[n+1];
-    int k=0;
+    int n,k=0;
+    cout<<"Write the number: ";
+    cin>>n;
+    cout<<"Number when divided by 4 leaves remainder 3: "<<endl;
     while (k<n)
     {
-        arr[k+1]=k+1;
-        if (arr[k+1]%2)
+        if (k%4==3)
         {
-            cout<<" "<<arr[k+1];
+            cout<<" "<<k;
         }
+        
         k++;
     }
+    
     cout<<endl;
     system("pause>nul");
     return 0;
