@@ -2,20 +2,18 @@
 using namespace std;
 
 int main() {
-    int n,s=0;
-    cout<<"Upper limit of the amount: ";
-    cin>>n;
-
-    if(n>0) {
-        while(n){
-            s+=n*n;
-            n--;
-        }
-        cout<<"Sum of square: "<<s<<endl;
-    }else{
-        cout<<"Invalid value specified"<<endl;
+    int n=10;
+    int bnm[n+1];
+    int k=0;
+    bnm[0]=1;
+    cout<<bnm[0];
+    while (k<n)
+    {
+        bnm[k+1]=bnm[k]*(n-k)/(k+1);
+        cout<<" "<<bnm[k+1];
+        k++;
     }
-
+    cout<<endl;
     system("pause>nul");
     return 0;
 }
