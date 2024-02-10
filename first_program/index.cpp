@@ -2,17 +2,18 @@
 using namespace std;
 
 int main() {
-    int n,k=0;
+    int n,k=2;
     cout<<"Write the number: ";
     cin>>n;
-    cout<<"Number when divided by 4 leaves remainder 3: "<<endl;
+    int fib[n+1];
+    fib[0]=0;
+    fib[1]=1;
+    cout<<"Fibonacci sequence: "<<endl;
+    cout<<" "<<fib[0]<<" "<<fib[1];
     while (k<n)
     {
-        if (k%4==3)
-        {
-            cout<<" "<<k;
-        }
-        
+        fib[k]=fib[k-1]+fib[k-2];
+        cout<<" "<<fib[k];
         k++;
     }
     
