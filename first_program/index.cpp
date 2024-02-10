@@ -2,15 +2,13 @@
 using namespace std;
 
 int main() {
-    int n=10;
-    int bnm[n+1];
+    const int n=10;
+    int arr[n+1];
     int k=0;
-    bnm[0]=1;
-    cout<<bnm[0];
-    while (k<n)
+    while (k<10)
     {
-        bnm[k+1]=bnm[k]*(n-k)/(k+1);
-        cout<<" "<<bnm[k+1];
+        arr[k+1]=k+1;
+        cout<<" "<<arr[k+1];
         k++;
     }
     cout<<endl;
