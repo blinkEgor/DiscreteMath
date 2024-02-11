@@ -1,29 +1,18 @@
 #include <iostream>
 using namespace std;
 
+double getMile(double km){
+    const double km_in_one_mile=1.609344;
+    return km/km_in_one_mile;
+}
+
 int main() {
-    int n,k=0;
-    cout<<"Enter a positive natural number: ";
-    cin>>n;
-    if (n>=0)
-    {
-        int bnm[n+1];
-        cout<<"Displaying Binomial Coefficients: "<<endl;
-        while (k<n)
-        {
-            bnm[0]=1;
-            bnm[k+1]=bnm[k]*(n-k)/(k+1);
-            
-            cout<<" "<<bnm[k];
-            k++;
-        }
-        
-        cout<<" "<<bnm[k];
-    }
-    else
-    {
-        cout<<n<<" is not a positive natural number!";
-    }
+    double km,mile;
+
+    cout<<"Enter the distance in kilometers: ";
+    cin>>km;
+    mile=getMile(km);
+    cout<<km<<" kilometers = "<<mile<<" miles "<<endl;
     
     return 0;
 }
