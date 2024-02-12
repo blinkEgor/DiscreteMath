@@ -1,31 +1,20 @@
 #include <iostream>
 using namespace std;
 
-double getFathoms(double a){
-    return a/3;
-}
-double getMeters(double f){
-    return f*2.16;
+double getM_s(double km_h){
+    double m_s=km_h/3.6;
+    int ceil=m_s*100;
+    m_s=(double)ceil/100;
+    return m_s;
 }
 
 int main() {
-    int fathoms,meters,centimeters;
-    double arshins,dFathoms,dMeters;
+    double km_h,m_s;
 
-    cout<<"Enter distance. "<<endl;
-    cout<<"Fathoms: ";
-    cin>>fathoms;
-    cout<<"Arshins: ";
-    cin>>arshins;
-
-    dFathoms=fathoms+getFathoms(arshins);
-    dMeters=getMeters(dFathoms);
-    meters=getMeters(dFathoms);
-
-    centimeters=(double)(dMeters-meters)*100;
-
-    cout<<"Meters: "<<meters<<endl;
-    cout<<"Centimeters: "<<centimeters;
+    cout<<"Enter speed in km/h: ";
+    cin>>km_h;
+    m_s=getM_s(km_h);
+    cout<<"m/s: "<<m_s;
     
     return 0;
 }
