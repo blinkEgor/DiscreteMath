@@ -6,8 +6,8 @@ int main() {
 
     cout<<"Enter the natural number: ";
     cin>>n;
-    s=(n*(n+1))/2;
-    cout<<"Sum of natural numbers: "<<s;
+    s=n*n;
+    cout<<"Sum of odd natural numbers: "<<s;
     
     return 0;
 }
