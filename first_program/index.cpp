@@ -5,14 +5,14 @@ int main() {
     int n,k=0;
     cout<<"Enter the natural number: ";
     cin>>n;
-    int enn[n+1];
-    enn[0]=0;
+    int onn[n+1];
+    onn[0]=1;
     cout<<"Array with even natural numbers: "<<endl;
     cout<<"[";
     while (k<n)
     {
-        enn[k+1]=enn[k]+2;
-        cout<<" "<<enn[k+1];
+        onn[k+1]=onn[k]+2;
+        cout<<" "<<onn[k];
         k++;
     }
     cout<<" ]"<<endl;
