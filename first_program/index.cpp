@@ -5,13 +5,21 @@ int main() {
     int n,k=0;
     cout<<"Enter the natural number: ";
     cin>>n;
-    int snn[n+1];
-    cout<<"Array with square of natural numbers: "<<endl;
+    int pot[n+1];
+    cout<<"Array with powers of two: "<<endl;
     cout<<"[";
     while (k<n)
     {
-        snn[k]=(k+1)*(k+1);
-        cout<<" "<<snn[k];
+        pot[k]=2;
+        int i=1;
+        while(i<k){
+            pot[k]*=2;   
+            i++;
+        }
+        if(k==0){
+            pot[k]=1;
+        }
+        cout<<" "<<pot[k];
         k++;
     }
     cout<<" ]"<<endl;
