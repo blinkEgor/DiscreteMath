@@ -2,19 +2,18 @@
 using namespace std;
 
 int main() {
-    int n,k=0;
-    cout<<"Enter the natural number: ";
-    cin>>n;
+    int n=10,k=0;
     int num[n+1];
-    cout<<"Array with ordinal numbers where odd numbers are squared: "<<endl;
+    while(k<n){
+        cout<<"Enter a number to fill the array: ";
+        cin>>num[k];
+        k++;
+    }
+    k=0;
+    cout<<"Array with entered numbers:"<<endl;
     cout<<"[";
     while (k<n)
     {
-        if(k%2){
-            num[k]=k*k;
-        }else{
-            num[k]=k;
-        }
         cout<<" "<<num[k];
         k++;
     }
