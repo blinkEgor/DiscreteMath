@@ -5,9 +5,12 @@ int main() {
     int n,s=0,k=1;
     cout<<"Enter an upper limit for the amount: ";
     cin>>n;
-    for(;k<=n;){
+    for(;;){
         s+=k*k;
         k++;
+        if(k>n){
+            break;
+        }
     }
     cout<<"Sum of squares of numbers from 1 to "<<n<<": "<<s<<endl;
 
