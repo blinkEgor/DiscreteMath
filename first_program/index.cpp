@@ -2,22 +2,14 @@
 using namespace std;
 
 int main() {
-    int n=10,k=0;
-    int num[n+1];
-    while(k<n){
-        cout<<"Enter a number to fill the array: ";
-        cin>>num[k];
-        k++;
+    int n,s=0,k;
+    cout<<"Enter an upper limit for the amount: ";
+    cin>>n;
+    for(k=1;k<=n;k++){
+        s+=k*k;
     }
-    k=0;
-    cout<<"Array with entered numbers:"<<endl;
-    cout<<"[";
-    while (k<n)
-    {
-        cout<<" "<<num[k];
-        k++;
-    }
-    cout<<" ]"<<endl;
-    
+    cout<<"Sum of squares of numbers from 1 to "<<n<<": "<<s<<endl;
+
+    system("pause>nul");
     return 0;
 }
