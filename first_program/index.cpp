@@ -1,18 +1,18 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 
 int main() {
-    int n=100;
-    double x=1;
-    double s=0,q=1,k=0;
-    do{
-        s+=q;
-        k++;
-        q*=x/k;
-    }while(k<=n);
-    cout<<"Calculated value: "<<s<<endl;
-    cout<<"Control value: "<<exp(x)<<endl;
+    int num,k;
+    for(k=1;k<=5;k++){
+        cout<<"Please enter a number from 1 to 3: ";
+        cin>>num;
+        switch(num){
+            case 1:cout<<"That's one"<<endl;break;
+            case 2:cout<<"That's two"<<endl;break;
+            case 3:cout<<"That's three"<<endl;break;
+            default:cout<<"I don't know that number"<<endl;
+        }
+    }
 
     system("pause>nul");
     return 0;
