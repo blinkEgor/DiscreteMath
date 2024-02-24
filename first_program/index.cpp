@@ -1,18 +1,18 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main() {
-    int n,s=0,k=1;
-    cout<<"Enter an upper limit for the amount: ";
-    cin>>n;
-    for(;;){
-        s+=k*k;
+    int n=100;
+    double x=1;
+    double s=0,q=1,k=0;
+    do{
+        s+=q;
         k++;
-        if(k>n){
-            break;
-        }
-    }
-    cout<<"Sum of squares of numbers from 1 to "<<n<<": "<<s<<endl;
+        q*=x/k;
+    }while(k<=n);
+    cout<<"Calculated value: "<<s<<endl;
+    cout<<"Control value: "<<exp(x)<<endl;
 
     system("pause>nul");
     return 0;
