@@ -1,16 +1,28 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 int main() {
-    int num,k;
-    for(k=1;k<=5;k++){
-        cout<<"Please enter a number from 1 to 3: ";
-        cin>>num;
+    int num;
+    srand(2);
+    for(int k=1;k<=10;k++){
+        num=2+rand()%7;
         switch(num){
-            case 1:cout<<"That's one"<<endl;break;
-            case 2:cout<<"That's two"<<endl;break;
-            case 3:cout<<"That's three"<<endl;break;
-            default:cout<<"I don't know that number"<<endl;
+            case 3:
+            case 6:
+                cout<<num<<": the number is divisible by three"<<endl;
+                break;
+            case 2:
+            case 4:
+            case 8:
+                cout<<num<<": power of two"<<endl;
+                break;
+            case 5:
+                cout<<num<<": five"<<endl;
+                break;
+            case 7:
+                cout<<num<<": seven"<<endl;
+                break;
         }
     }
 
