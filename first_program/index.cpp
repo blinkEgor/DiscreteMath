@@ -3,28 +3,40 @@
 using namespace std;
 
 int main() {
-    int num;
+    const int n=10;
     srand(2);
-    for(int k=1;k<=5;k++){
-        cout<<"Pleace, enter numbers from 1 to 3: ";
-        cin>>num;
-        if(num==1){
-            cout<<"That's one"<<endl;
-        }
-        else{
-            if(num==2){
-                cout<<"That's two"<<endl;
-            }
-            else{
-                if(num==3){
-                    cout<<"That's three"<<endl;
-                }
-                else{
-                    cout<<"I don't know that number"<<endl;
-                }
+    int nums[n];
+    int i,j,k,s;
+
+    cout<<"Array before sorting:\n| ";
+
+    for(k=0;k<n;k++)
+    {
+        nums[k]=rand()%10;
+        cout<<nums[k]<<" | ";
+    }
+
+    cout<<"\nArray after sorting:\n| ";
+
+    for(i=1;i<=n-1;i++)
+    {
+        for(j=0;j<n-i;j++)
+        {
+            if (nums[j]>nums[j+1])
+            {
+                s=nums[j+1];
+                nums[j+1]=nums[j];
+                nums[j]=s;
             }
         }
     }
+
+    for (k = 0; k < n; k++)
+    {
+        cout<<nums[k]<<" | ";
+    }
+
+    cout<<endl;
 
     system("pause>nul");
     return 0;
