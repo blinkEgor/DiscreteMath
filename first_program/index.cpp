@@ -3,41 +3,33 @@
 using namespace std;
 
 int main() {
-    const int n=10;
     srand(2);
-    int nums[n];
-    int i,j,k,s;
+    int nums[12];
 
-    cout<<"Array before sorting:\n| ";
-
-    for(k=0;k<n;k++)
+    cout<<"Array with random numbers:\n";
+    for (int &x: nums)
     {
-        nums[k]=rand()%10;
-        cout<<nums[k]<<" | ";
+        x=rand()%10;
+        cout<<x<<" ";
+    }
+    cout<<endl;
+
+    int length=0;
+
+    for (int &x: nums)
+    {
+        length++;
     }
 
-    cout<<"\nArray after sorting:\n| ";
+    cout<<"Array length: "<<length<<endl;
+    cout<<"Checking array contents:\n";
 
-    for(i=1;i<=n-1;i++)
+    for (int k = 0; k < length; k++)
     {
-        for(j=0;j<n-i;j++)
-        {
-            if (nums[j]>nums[j+1])
-            {
-                s=nums[j+1];
-                nums[j+1]=nums[j];
-                nums[j]=s;
-            }
-        }
-    }
-
-    for (k = 0; k < n; k++)
-    {
-        cout<<nums[k]<<" | ";
+        cout<<nums[k]<<" ";
     }
 
     cout<<endl;
-
     system("pause>nul");
     return 0;
 }
