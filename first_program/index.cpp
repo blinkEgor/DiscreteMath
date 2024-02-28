@@ -3,33 +3,34 @@
 using namespace std;
 
 int main() {
-    srand(2);
-    int nums[12];
+    cout<<"Solving the equation: Ax=B\n";
+    double A,B;
+    cout<<"A = ";
+    cin>>A;
+    cout<<"B = ";
+    cin>>B;
 
-    cout<<"Array with random numbers:\n";
-    for (int &x: nums)
+    try
     {
-        x=rand()%10;
-        cout<<x<<" ";
+        if (A!=0)
+        {
+            throw A;
+        }
+        if (B!=0)
+        {
+            throw "No solutions";    
+        }
+        cout<<"Solution is any number"<<endl;        
     }
-    cout<<endl;
-
-    int length=0;
-
-    for (int &x: nums)
+    catch(double e)
     {
-        length++;
+        cout<<"Silution the equation: "<<B/e<<endl;
     }
-
-    cout<<"Array length: "<<length<<endl;
-    cout<<"Checking array contents:\n";
-
-    for (int k = 0; k < length; k++)
+    catch(const char* e)
     {
-        cout<<nums[k]<<" ";
+        cout<<e<<endl;
     }
-
-    cout<<endl;
+    
     system("pause>nul");
     return 0;
 }
