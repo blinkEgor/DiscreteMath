@@ -3,34 +3,19 @@
 using namespace std;
 
 int main() {
-    cout<<"Solving the equation: Ax=B\n";
-    double A,B;
-    cout<<"A = ";
-    cin>>A;
-    cout<<"B = ";
-    cin>>B;
+    int n=10,s=0,k=1;
 
-    try
+    start: // label
+
+    s+=k*k;
+    if(k<n)
     {
-        if (A!=0)
-        {
-            throw A;
-        }
-        if (B!=0)
-        {
-            throw "No solutions";    
-        }
-        cout<<"Solution is any number"<<endl;        
+        k++;
+        goto start; // go to label "start"
     }
-    catch(double e)
-    {
-        cout<<"Silution the equation: "<<B/e<<endl;
-    }
-    catch(const char* e)
-    {
-        cout<<e<<endl;
-    }
-    
+
+    cout<<"sum of squares of numbers from 1 to "<<n<<": "<<s<<endl;
+       
     system("pause>nul");
     return 0;
 }
