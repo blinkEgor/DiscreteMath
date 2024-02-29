@@ -5,21 +5,33 @@ using namespace std;
 int main() {
     int s=0,n,p=-2,i=0;
 
-    cout<<"Please enter the number of even natural numbers: ";
+    start:
+
+    cout<<"Please enter a number of even natural numbers: ";
     cin>>n;
 
-    do
+    if (n>0)
     {
-        p+=2;
-        s+=p;
-        i++;
-        // cout<<"p = "<<p;
-        // cout<<"; s = "<<s<<endl;
-    } while (i<n);
+        do
+        {
+            p+=2;
+            s+=p;
+            i++;
+        } while (i<n);
+        
+        cout<<"Sum of even natural numbers from 0 to "<<p<<": "<<s<<endl;
+    }
+    if (n==0)
+    {
+        cout<<"The amount is undefined or equal to zero"<<endl;
+        goto start;
+    }
+    if (n<0)
+    {
+        cout<<"Plese enter a positive number"<<endl;
+        goto start;
+    }
     
-    
-    cout<<"Sum of even natural numbers from 0 to "<<p<<": "<<s<<endl;
-       
     system("pause>nul");
     return 0;
 }
