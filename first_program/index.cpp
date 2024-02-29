@@ -3,35 +3,21 @@
 using namespace std;
 
 int main() {
-    int s=0,n,p=-2,i=0;
+    int n;
 
-    start:
-
-    cout<<"Please enter a number of even natural numbers: ";
+    cout<<"Please enter an integer: ";
     cin>>n;
 
-    if (n>0)
+    cout<<"Your number is divisible without a remainder by:\n| ";
+    for (int i = 1; i <= n; i++)
     {
-        do
+        if (n%i==0)
         {
-            p+=2;
-            s+=p;
-            i++;
-        } while (i<n);
-        
-        cout<<"Sum of even natural numbers from 0 to "<<p<<": "<<s<<endl;
+            cout<<i<<" | ";
+        }
     }
-    if (n==0)
-    {
-        cout<<"The amount is undefined or equal to zero"<<endl;
-        goto start;
-    }
-    if (n<0)
-    {
-        cout<<"Plese enter a positive number"<<endl;
-        goto start;
-    }
-    
+    cout<<endl;
+
     system("pause>nul");
     return 0;
 }
