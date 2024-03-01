@@ -3,20 +3,27 @@
 using namespace std;
 
 int main() {
-    int n;
+    int a,b,n;
 
-    cout<<"Please enter an integer: ";
-    cin>>n;
+    cout<<"Please enter two natural numbers, provided that a >= b"<<endl;
+    cout<<"a: ";
+    cin>>a;
+    cout<<"b: ";
+    cin>>b;
 
-    cout<<"Your number is divisible without a remainder by:\n| ";
-    for (int i = 1; i <= n; i++)
+    while (a!=b)
     {
-        if (n%i==0)
+        if (a>b)
         {
-            cout<<i<<" | ";
+            a-=b;
+        }
+        else
+        {
+            b-=a;
         }
     }
-    cout<<endl;
+
+    cout<<"Greatest common divisor: "<<b<<endl;
 
     system("pause>nul");
     return 0;
