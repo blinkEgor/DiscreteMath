@@ -4,18 +4,30 @@
 using namespace std;
 
 int main() {
-    int n=100;
-    double x=1,s=0,q=1,k=0;
+    int a,b;
+    double x;
 
-    do
+    cout<<"A: ";
+    cin>>a;
+    cout<<"B: ";
+    cin>>b;
+
+    if (a!=0)
     {
-        s+=q;
-        k++;
-        q*=x/k;
-    } while (k<=n);
-    
-    cout<<s<<endl;
-    cout<<exp(x)<<endl;
+        x=(double)b/a;
+        cout<<"Answer: "<<x<<endl;
+    }
+    if (a==0)
+    {
+        if (b!=0)
+        {
+            cout<<"No solutions!"<<endl;
+        }
+        else
+        {
+            cout<<"Any number"<<endl;
+        }
+    }
 
     system("pause>nul");
     return 0;
