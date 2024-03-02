@@ -1,29 +1,21 @@
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 using namespace std;
 
 int main() {
-    int a,b,n;
+    int n=100;
+    double x=1,s=0,q=1,k=0;
 
-    cout<<"Please enter two natural numbers, provided that a >= b"<<endl;
-    cout<<"a: ";
-    cin>>a;
-    cout<<"b: ";
-    cin>>b;
-
-    while (a!=b)
+    do
     {
-        if (a>b)
-        {
-            a-=b;
-        }
-        else
-        {
-            b-=a;
-        }
-    }
-
-    cout<<"Greatest common divisor: "<<b<<endl;
+        s+=q;
+        k++;
+        q*=x/k;
+    } while (k<=n);
+    
+    cout<<s<<endl;
+    cout<<exp(x)<<endl;
 
     system("pause>nul");
     return 0;
