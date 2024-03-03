@@ -4,23 +4,43 @@
 using namespace std;
 
 int main() {
-    int a,b,c,n=100;
+    int A,B,C;
+    double D,x;
 
-    for (int i = 0; i < n; i++)
+    cout<<"Ax**2 + Bx + C = 0"<<endl;
+    cout<<"A = ";
+    cin>>A;
+    cout<<"B = ";
+    cin>>B;
+    cout<<"C = ";
+    cin>>C;
+
+    if (A!=0)
     {
-        a=(i+1)*(i+1);
-        b=(i+2)*(i+2);
-        c=(i+3)*(i+3);
-        if (a+b==c)
+        D=(double)B*B-4*A*C;
+        cout<<"D = "<<D<<endl;
+
+        if (D==0)
         {
-            cout<<i+1<<". "<<sqrt(a)<<"**2 + "<<sqrt(b)<<"**2 = "<<sqrt(c)<<"**2"<<endl;
+            x=(double)-B/( 2*A );
+            cout<<"x = "<<x<<endl;
         }
-        // else
-        // {
-        //     cout<<i+1<<". No!"<<endl;
-        // }
+        if (D>0)
+        {
+            x=(double)( -B-sqrt(D) )/( 2*A );
+            cout<<"1.x = "<<x<<endl;
+            x=(double)( -B+sqrt(D) )/( 2*A );
+            cout<<"2.x = "<<x<<endl;
+        }
+        else
+        {
+            cout<<"No solution!"<<endl;
+        }
     }
-    
+    else
+    {
+        cout<<"No solution!"<<endl;
+    }
 
     system("pause>nul");
     return 0;
