@@ -15,7 +15,14 @@ int main() {
     if (a!=0)
     {
         x=(double)b/a;
-        cout<<"Answer: "<<x<<endl;
+        if (x-b/a==0)
+        {
+            cout<<"Answer: "<<x<<endl;   
+        }
+        else
+        {
+            cout<<"No solutions!"<<endl;
+        }
     }
     if (a==0)
     {
