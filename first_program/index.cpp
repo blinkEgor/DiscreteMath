@@ -4,43 +4,32 @@
 using namespace std;
 
 int main() {
-    int A,B,C;
-    double D,x;
+    int x;
 
-    cout<<"Ax**2 + Bx + C = 0"<<endl;
-    cout<<"A = ";
-    cin>>A;
-    cout<<"B = ";
-    cin>>B;
-    cout<<"C = ";
-    cin>>C;
+    start:
 
-    if (A!=0)
+    cout<<"Please enter your number: ";
+    cin>>x;
+
+    if (x>0)
     {
-        D=(double)B*B-4*A*C;
-        cout<<"D = "<<D<<endl;
+        cout<<"Your number is divisible by\n| ";
 
-        if (D==0)
+        for (int i = 1; i <= x; i++)
         {
-            x=(double)-B/( 2*A );
-            cout<<"x = "<<x<<endl;
-        }
-        if (D>0)
-        {
-            x=(double)( -B-sqrt(D) )/( 2*A );
-            cout<<"1.x = "<<x<<endl;
-            x=(double)( -B+sqrt(D) )/( 2*A );
-            cout<<"2.x = "<<x<<endl;
-        }
-        else
-        {
-            cout<<"No solution!"<<endl;
+            if (x%i==0)
+            {
+                cout<<i<<" | ";
+            }
         }
     }
     else
     {
-        cout<<"No solution!"<<endl;
+        cout<<"Enter an integer greater than zero"<<endl;
+        goto start;
     }
+
+    cout<<endl;
 
     system("pause>nul");
     return 0;
