@@ -4,37 +4,23 @@
 using namespace std;
 
 int main() {
-    int a,b;
-    double x;
+    int a,b,c,n=100;
 
-    cout<<"A: ";
-    cin>>a;
-    cout<<"B: ";
-    cin>>b;
-
-    if (a!=0)
+    for (int i = 0; i < n; i++)
     {
-        x=(double)b/a;
-        if (x-b/a==0)
+        a=(i+1)*(i+1);
+        b=(i+2)*(i+2);
+        c=(i+3)*(i+3);
+        if (a+b==c)
         {
-            cout<<"Answer: "<<x<<endl;   
+            cout<<i+1<<". "<<sqrt(a)<<"**2 + "<<sqrt(b)<<"**2 = "<<sqrt(c)<<"**2"<<endl;
         }
-        else
-        {
-            cout<<"No solutions!"<<endl;
-        }
+        // else
+        // {
+        //     cout<<i+1<<". No!"<<endl;
+        // }
     }
-    if (a==0)
-    {
-        if (b!=0)
-        {
-            cout<<"No solutions!"<<endl;
-        }
-        else
-        {
-            cout<<"Any number"<<endl;
-        }
-    }
+    
 
     system("pause>nul");
     return 0;
