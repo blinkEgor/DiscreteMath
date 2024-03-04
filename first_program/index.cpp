@@ -4,27 +4,39 @@
 using namespace std;
 
 int main() {
-    int x;
+    int n=10;
+    srand(2);
+    int arr[n];
+    int i,j,k,s;
 
-    while (x<1||x>10)
+    cout<<"An array of random numbers."<<endl;
+
+    cout<<"Before sorting:\n|";
+    for (k = 0; k < n; k++)
     {
-        cout<<"Please enter a number from 1 to 10: ";
-        cin>>x;
+        arr[k]=rand()%10;
+        cout<<arr[k]<<" | ";
     }
     
-    switch (x)
+    for (i = 1; i <= n-1; i++)
     {
-    case 1:
-    case 2:
-    case 3:
-    case 5:
-    case 8:
-        cout<<"Number "<<x<<" is the Fibonacci number."<<endl;
-        break;
-    default:
-        cout<<"Number "<<x<<" isn't the Fibonacci number."<<endl;
-        break;
+        for (j = 0; j < n-i; j++)
+        {
+            if (arr[j]<arr[j+1])
+            {
+                s=arr[j+1];
+                arr[j+1]=arr[j];
+                arr[j]=s;
+            }        
+        }
     }
+    
+    cout<<"\nAfter sorting:\n|";
+    for (k = 0; k < n; k++)
+    {
+        cout<<arr[k]<<" | ";
+    }
+    cout<<endl;
 
     system("pause>nul");
     return 0;
