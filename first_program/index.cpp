@@ -6,30 +6,25 @@ using namespace std;
 int main() {
     int x;
 
-    start:
-
-    cout<<"Please enter your number: ";
-    cin>>x;
-
-    if (x>0)
+    while (x<1||x>10)
     {
-        cout<<"Your number is divisible by\n| ";
-
-        for (int i = 1; i <= x; i++)
-        {
-            if (x%i==0)
-            {
-                cout<<i<<" | ";
-            }
-        }
+        cout<<"Please enter a number from 1 to 10: ";
+        cin>>x;
     }
-    else
+    
+    switch (x)
     {
-        cout<<"Enter an integer greater than zero"<<endl;
-        goto start;
+    case 1:
+    case 2:
+    case 3:
+    case 5:
+    case 8:
+        cout<<"Number "<<x<<" is the Fibonacci number."<<endl;
+        break;
+    default:
+        cout<<"Number "<<x<<" isn't the Fibonacci number."<<endl;
+        break;
     }
-
-    cout<<endl;
 
     system("pause>nul");
     return 0;
