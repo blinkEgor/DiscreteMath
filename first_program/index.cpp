@@ -22,7 +22,7 @@ int main() {
     {
         for (j = 0; j < n-i; j++)
         {
-            if (arr[j]>arr[j+1])
+            if (arr[j]<arr[j+1])
             {
                 s=arr[j+1];
                 arr[j+1]=arr[j];
@@ -33,14 +33,24 @@ int main() {
     
     for (i = 1; i < n; i++)
     {
-        for (j = 0; j < n; j++)
+        for (j = 0; j < n-i; j++)
         {
-            if ((arr[j]%2==0)&&(arr[j+1]%2!=0))
-            {
+            if ((arr[j]%2!=0)&&(arr[j+1]%2==0))
+            {                
                 s=arr[j+1];
                 arr[j+1]=arr[j];
                 arr[j]=s;
             }
+            if ((arr[j]%2!=0)&&(arr[j+1]%2!=0))
+            {
+                if (arr[j]>arr[j+1])
+                {
+                    s=arr[j+1];
+                    arr[j+1]=arr[j];
+                    arr[j]=s;
+                }
+            }
+            
         }
     }
     
