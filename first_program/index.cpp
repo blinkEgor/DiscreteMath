@@ -2,37 +2,18 @@
 using namespace std;
 
 int main() {
-    const int size=12;
-    int k;
-    char symbs[size];
+    int num;
+    int &ref=num;
 
-    char*p;
-    char*q;
+    num=100;
 
-    p=symbs;
-    p[0]='A';
-    q=&symbs[size-1];
+    cout<<"num = "<<num<<endl;
+    cout<<"ref = "<<ref<<endl;
 
-    cout<<"Between the first and last elements of "<<q-p<<" positions:\n";
-    while (p!=q)
-    {
-        p++;
-        *p=p[-1]+1;
-    }
+    ref=200;
 
-    cout<<"Array elements\n| ";
-    for (k = 0; k < size; k++)
-    {
-        cout<<symbs[k]<<" | ";
-    }
-    
-    cout<<"\nElements in reverse order\n| ";
-    for (k = 0; k < size; k++)
-    {
-        cout<<q[-k]<<" | ";
-    }
-
-    cout<<endl;
+    cout<<"num = "<<num<<endl;
+    cout<<"ref = "<<ref<<endl;
 
     system("pause>nul");
     return 0;
