@@ -2,18 +2,26 @@
 using namespace std;
 
 int main() {
-    int num;
-    int &ref=num;
+    int*size;
+    size=new int;
 
-    num=100;
+    cout<<"Please enter array size: ";
+    cin>>*size;
 
-    cout<<"num = "<<num<<endl;
-    cout<<"ref = "<<ref<<endl;
+    char* symbs;
 
-    ref=200;
+    symbs=new char[*size];
 
-    cout<<"num = "<<num<<endl;
-    cout<<"ref = "<<ref<<endl;
+    for (int i = 0; i < *size; i++)
+    {
+        symbs[i]='a'+i;
+        cout<<symbs[i]<<" ";
+    }
+    
+    delete []symbs;
+    delete size;
+
+    cout<<"\nThe array and variable are deleted.\n";
 
     system("pause>nul");
     return 0;
