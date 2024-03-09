@@ -2,26 +2,28 @@
 using namespace std;
 
 int main() {
-    int*size;
-    size=new int;
+    char str[100]="Programming in C++";
+    cout<<str<<endl;
 
-    cout<<"Please enter array size: ";
-    cin>>*size;
-
-    char* symbs;
-
-    symbs=new char[*size];
-
-    for (int i = 0; i < *size; i++)
+    for (int i = 0; i < str[i]; i++)
     {
-        symbs[i]='a'+i;
-        cout<<symbs[i]<<" ";
+        cout<<str[i]<<"_";
     }
-    
-    delete []symbs;
-    delete size;
+    cout<<endl;
 
-    cout<<"\nThe array and variable are deleted.\n";
+    for (char* p = str; *p; p++)
+    {
+        cout<<p<<endl;
+    }
+
+    str[13]='\0';
+    cout<<str<<endl;
+    cout<<str+14<<endl;
+    cout<<"One Two Three"+4<<endl;
+    
+    const char*q="One Two Three"+8;
+    cout<<q[0]<<endl;
+    cout<<q<<endl;
 
     system("pause>nul");
     return 0;
