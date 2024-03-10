@@ -2,28 +2,22 @@
 using namespace std;
 
 int main() {
-    char str[100]="Programming in C++";
-    cout<<str<<endl;
+    srand(2);
+    const int w=9;
+    const int h=5;
+    char Lts[h][w];
 
-    for (int i = 0; i < str[i]; i++)
+    for (int i = 0; i < h; i++)
     {
-        cout<<str[i]<<"_";
+        cout<<"| ";
+        for (int j = 0; j < w; j++)
+        {
+            Lts[i][j]='A'+rand()%25;
+            cout<<Lts[i][j]<<" | ";
+        }
+        cout<<endl;
     }
-    cout<<endl;
-
-    for (char* p = str; *p; p++)
-    {
-        cout<<p<<endl;
-    }
-
-    str[13]='\0';
-    cout<<str<<endl;
-    cout<<str+14<<endl;
-    cout<<"One Two Three"+4<<endl;
     
-    const char*q="One Two Three"+8;
-    cout<<q[0]<<endl;
-    cout<<q<<endl;
 
     system("pause>nul");
     return 0;
