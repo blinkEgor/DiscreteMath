@@ -4,30 +4,14 @@ using namespace std;
 
 int main()
 {
-    srand(2);
-    int i,j;
-    const int size=5;
-    const int cols[size]={3,7,6,4,2};
-    int**nums=new int*[size];
+    const char*str[3]={{"red"},{"yellow"},{"green"}};
 
-    for (i = 0; i < size; i++)
+    for (int i = 0; i < 3; i++)
     {
-        nums[i]=new int[cols[i]];
-        cout<<"| ";
-        for (j = 0; j < cols[i]; j++)
-        {
-            nums[i][j]=rand()%10;
-            cout<<nums[i][j]<<" | ";
-        }
-        cout<<endl;
-    }
-    
-    for (i = 0; i < size; i++)
-    {
-        delete[]nums[i];
+        cout<<str[i]<<endl;
     }
 
-    delete[]nums;
+    cout<<str[2][0]<<str[2][1]<<str[2][2]<<str[1][0]<<endl;
     
     system("pause>nul");
     return 0;
