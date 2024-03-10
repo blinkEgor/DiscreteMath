@@ -2,46 +2,32 @@
 #include <cstdio>
 using namespace std;
 
-const int n=3;
-
-void show(int M[n][n])
-{
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            printf("%4d",M[i][j]);
-        }
-        printf("\n");
-    }
-}
-
 int main()
 {
-    int A[n][n]={{1,-2,1},{2,0,-1},{2,3,-1}};
-    printf("Matrix A:\n");
-    show(A);
+    srand(2);
+    int i,j;
+    const int size=5;
+    const int cols[size]={3,7,6,4,2};
+    int**nums=new int*[size];
 
-    int B[n][n]={{2,1,-1},{1,3,1},{-2,1,4}};
-    printf("Matrix B:\n");
-    show(B);
-
-    int C[n][n];
-
-    for (int i = 0; i < n; i++)
+    for (i = 0; i < size; i++)
     {
-        for (int j = 0; j < n; j++)
+        nums[i]=new int[cols[i]];
+        cout<<"| ";
+        for (j = 0; j < cols[i]; j++)
         {
-            C[i][j]=0;
-            for (int k = 0; k < n; k++)
-            {
-                C[i][j]+=A[i][k]*B[k][j];
-            }
+            nums[i][j]=rand()%10;
+            cout<<nums[i][j]<<" | ";
         }
+        cout<<endl;
+    }
+    
+    for (i = 0; i < size; i++)
+    {
+        delete[]nums[i];
     }
 
-    printf("Matrix C=A*B:\n");
-    show(C);
+    delete[]nums;
     
     system("pause>nul");
     return 0;
