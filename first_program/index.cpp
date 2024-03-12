@@ -1,36 +1,27 @@
 #include <iostream>
 #include <cstdio>
+#include <cmath>
 using namespace std;
 
 int main()
 {
     const int n=10;
     int s=0;
-    int arr_one[n];
-    int arr_two[n];
-
+    int arr[n];
     srand(2);
 
-    cout<<endl<<"Array one:\n|";
+    cout<<"Array:\n|";
     for (int i = 0; i < n; i++)
     {
-        arr_one[i]=rand()%10;
-        cout<<arr_one[i]<<" | ";
+        arr[i]=rand()%10;
+        cout<<arr[i]<<" | ";
     }
-
-    cout<<endl<<"Array two:\n|";
+    
     for (int i = 0; i < n; i++)
     {
-        arr_two[i]=rand()%10;
-        cout<<arr_two[i]<<" | ";
+        s+=arr[i]*arr[i];
     }
-
-    cout<<endl<<"Sum of pairwise products of an array: ";
-    for (int i = 0; i < n; i++)
-    {
-        s+=arr_one[i]*arr_two[i];
-    }
-    cout<<s<<endl;
+    cout<<endl<<"Sum of array squares: "<<s<<endl;
     
     system("pause>nul");
     return 0;
