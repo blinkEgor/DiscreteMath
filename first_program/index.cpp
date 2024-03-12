@@ -5,23 +5,32 @@ using namespace std;
 
 int main()
 {
-    const int n=10;
+    const int h=5;
+    const int w=10;
+    int two_dim_arr[h][w];
     int s=0;
-    int arr[n];
+
     srand(2);
 
-    cout<<"Array:\n|";
-    for (int i = 0; i < n; i++)
+    cout<<"Two-dimensional array:";
+    for (int i = 0; i < h; i++)
     {
-        arr[i]=rand()%10;
-        cout<<arr[i]<<" | ";
+        cout<<endl<<"| ";
+        for (int j = 0; j < w; j++)
+        {
+            two_dim_arr[i][j]=rand()%10;
+            cout<<two_dim_arr[i][j]<<" | ";
+        }
     }
-    
-    for (int i = 0; i < n; i++)
+
+    for (int i = 0; i < h; i++)
     {
-        s+=arr[i]*arr[i];
+        for (int j = 0; j < w; j++)
+        {
+            s+=two_dim_arr[i][j]*two_dim_arr[i][j];
+        }
     }
-    cout<<endl<<"Sum of array squares: "<<s<<endl;
+    cout<<endl<<"Sum of squares of a two-dimensional array: "<<s<<endl;
     
     system("pause>nul");
     return 0;
