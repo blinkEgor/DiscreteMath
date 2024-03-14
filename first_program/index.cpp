@@ -25,7 +25,7 @@ int main()
     for (int i = 0; i < n; i++)
     {
         cout<<"\n| ";
-        for (int j = 0; j < n; j++)
+        for (int j = n-1; j >= 0; j--)
         {
             cout<<arr[j][i]<<" | ";
         }
