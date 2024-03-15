@@ -5,32 +5,43 @@ using namespace std;
 
 int main()
 {
-    const int n=5;
-    int arr[n][n];
-
     srand(2);
+    const int n=5;
+    int s=0;
+    int**a=new int*[n];
 
+    for (int i = 0; i < n; i++)
+    {
+        a[i]=new int[n];
+    }
+    
     cout<<"Matrix:";
     for (int i = 0; i < n; i++)
     {
         cout<<"\n| ";
         for (int j = 0; j < n; j++)
         {
-            arr[i][j]=rand()%10;
-            cout<<arr[i][j]<<" | ";
+            a[i][j]=rand()%10;
+            cout<<a[i][j]<<" | ";
         }
     }
 
-    cout<<"\nTransposed matrix:";
     for (int i = 0; i < n; i++)
     {
-        cout<<"\n| ";
-        for (int j = n-1; j >= 0; j--)
+        for (int j = 0; j < n; j++)
         {
-            cout<<arr[j][i]<<" | ";
+            if (i == j || j==n-i-1)
+				s += a[i][j];
         }
     }
-    cout<<endl;
+
+    cout<<"\nSum = "<<s<<endl;
+
+    for (int i = 0; i < n; i++)
+    {
+        delete[]a[i];
+    }
+    delete[]a;
     
     system("pause>nul");
     return 0;
