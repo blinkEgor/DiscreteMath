@@ -6,34 +6,23 @@ using namespace std;
 int main()
 {
     srand(2);
-    const int n=5;
-    int sh;
-
-    int arr[n];
-    int t;
+    const int h=5;
+    const int w=8;
+    int arr[h][w];
 
     cout<<"Array:\n| ";
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < h; i++)
     {
-        arr[i]=rand()%10;
-        cout<<arr[i]<<" | ";
+        for (int j = 0; j < w; j++)
+        {
+            arr[i][j]=rand()%10;
+            cout<<arr[i][j]<<" | ";
+        }
+        if(i==h-1)
+            cout<<endl;
+        else
+            cout<<"\n| ";
     }
-
-    cout<<"\nEnter the number of shifts: ";
-    cin>>sh;
-
-    cout<<"The array is shifted to the right:\n| ";
-    for (int i = 0; i < sh; i++)
-    {
-        t=arr[n-1];
-        for (int j = n-2; j >= 0; j--)
-            arr[j+1]=arr[j];
-        arr[0]=t;
-    }
-    for (int i = 0; i < n; i++)
-        cout<<arr[i]<<" | ";
-
-    cout<<endl;
     
     system("pause>nul");
     return 0;
