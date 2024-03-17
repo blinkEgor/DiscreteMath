@@ -7,81 +7,33 @@ int main()
 {
     srand(2);
     const int n=5;
+    int sh;
 
-    int l,s;
-    int**p_l=new int*[n];
-    int**p_s=new int*[n];
+    int arr[n];
+    int t;
 
-    int**a=new int*[n];
-
+    cout<<"Array:\n| ";
     for (int i = 0; i < n; i++)
     {
-        a[i]=new int[n];
-        p_l[i]=new int[n];
-        p_s[i]=new int[n];
-    }
-    
-    cout<<"Matrix:";
-    for (int i = 0; i < n; i++)
-    {
-        cout<<"\n| ";
-        for (int j = 0; j < n; j++)
-        {
-            a[i][j]=rand()%10;
-            cout<<a[i][j]<<" | ";
-        }
+        arr[i]=rand()%10;
+        cout<<arr[i]<<" | ";
     }
 
-    l=a[0][0];
-    for (int i = 0; i < n; i++)
+    cout<<"\nEnter the number of shifts: ";
+    cin>>sh;
+
+    cout<<"The array is shifted to the right:\n| ";
+    for (int i = 0; i < sh; i++)
     {
-        for (int j = 0; j < n; j++)
-        {
-            if (l<a[i][j])
-                l=a[i][j];
-        }
+        t=arr[n-1];
+        for (int j = n-2; j >= 0; j--)
+            arr[j+1]=arr[j];
+        arr[0]=t;
     }
-    cout<<"\nLargest: "<<l<<endl;
-    cout<<"Position:";
     for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            if (l==a[i][j])
-                cout<<" ["<<i<<"]"<<"["<<j<<"]";
-        }    
-    }
-    
-    s=a[0][0];
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            if (s>a[i][j])
-                s=a[i][j];
-        }
-    }
-    cout<<"\nSmallest: "<<s<<endl;
-    cout<<"Position:";
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            if (s==a[i][j])
-                cout<<" ["<<i<<"]"<<"["<<j<<"]";
-        }    
-    }
+        cout<<arr[i]<<" | ";
+
     cout<<endl;
-    
-    for (int i = 0; i < n; i++)
-    {
-        delete[]a[i];
-        delete[]p_l[i];
-        delete[]p_s[i];
-    }
-    delete[]a;
-    delete[]p_l;
-    delete[]p_s;
     
     system("pause>nul");
     return 0;
