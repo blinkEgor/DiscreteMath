@@ -5,20 +5,24 @@ using namespace std;
 
 int main()
 {
-    srand(2);
-    const int h=5;
-    const int w=3;
-    int arr[h][w];
+    const int n=5;
+    int mat[n][n];
 
-    cout<<"Array:\n| ";
-    for (int j = 0; j < h; j++)
+    cout<<"Matrix:\n| ";
+    for (int i = 0; i < n; i++)
     {
-        for (int i = 0; i < w; i++)
+        for (int j = 0; j < n; j++)
         {
-            arr[j][i]=rand()%10;
-            cout<<arr[j][i]<<" [i="<<i<<"][j="<<j<<"] | ";
+            if((i==j)||
+                (i+j==n-1))
+            {
+                mat[i][j]=1;
+            }
+            else
+                mat[i][j]=0;
+            cout<<mat[i][j]<<" | ";
         }
-        if(j==h-1)
+        if(i==n-1)
             cout<<endl;
         else
             cout<<"\n| ";
