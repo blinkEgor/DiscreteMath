@@ -7,18 +7,18 @@ int main()
 {
     srand(2);
     const int h=5;
-    const int w=8;
+    const int w=3;
     int arr[h][w];
 
     cout<<"Array:\n| ";
-    for (int i = 0; i < h; i++)
+    for (int j = 0; j < h; j++)
     {
-        for (int j = 0; j < w; j++)
+        for (int i = 0; i < w; i++)
         {
-            arr[i][j]=rand()%10;
-            cout<<arr[i][j]<<" | ";
+            arr[j][i]=rand()%10;
+            cout<<arr[j][i]<<" [i="<<i<<"][j="<<j<<"] | ";
         }
-        if(i==h-1)
+        if(j==h-1)
             cout<<endl;
         else
             cout<<"\n| ";
