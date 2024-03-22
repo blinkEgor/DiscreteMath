@@ -4,24 +4,39 @@ using namespace std;
 
 int main()
 {
-    const int n=10;
-    char a[n];
-    char b[n];
+    const int n = 5;
+    char a[n][n];
+    char l[n];
+    char c = 'A';
 
-    cout<<"Character array:\n| ";
-    for(int i=0; i<n; i++)
-    {
-        a[i] = (char)'A' + i;
-        cout << a[i] <<" | ";
-    }
-    cout << endl;
+    srand(2);
 
-    cout <<"Reversible:\n| ";
-    for (int i=1; i<=n; i++)
+    cout <<"Two-dimensional character array:";
+    for (int i = 0; i < n; i++)
     {
-        b[i] = a[n-i];
-        cout << b[i] <<" | ";
+        cout <<"\n| ";
+        for (int j = 0; j < n; j++)
+        {
+            a[i][j] = (char)'A' + rand()%27;
+            cout << a[i][j] <<" | ";
+        }
     }
+
+    cout <<"\nLargest:\n| ";
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (c < a[j][i])
+            {
+                c = a[j][i];
+            }
+            l[i] = c;
+        }
+        c = 'A';
+        cout<< l[i] <<" | ";
+    }
+
     cout << endl;
     
     system("pause>nul");
