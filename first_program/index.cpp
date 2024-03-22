@@ -4,40 +4,40 @@ using namespace std;
 
 int main()
 {
-    const int n = 5;
-    char a[n][n];
-    char l[n];
-    char c = 'Z';
+    const int n = 100;
+    char a[n]="I will become a creator of games and applications";
 
-    srand(2);
+    cout<<"Display:\n"<<a<<endl;
 
-    cout <<"Two-dimensional character array:";
-    for (int i = 0; i < n; i++)
+    cout<<"How many words:\n";
+    int w=1;
+    for (int i = 0; a[i]; i++)
     {
-        cout <<"\n| ";
-        for (int j = 0; j < n; j++)
+        if (a[i] == ' ')
         {
-            a[i][j] = (char)'A' + rand()%27;
-            cout << a[i][j] <<" | ";
+            w++;
+        }
+    }
+    cout<<w<<endl;
+
+    cout<<"How many letters:\n";
+    int l[w];
+    for (int i = 0, j = 0, k = 0; a[i]; i++)
+    {
+        if (a[i] != ' ')
+        {
+            j++;
+        }
+        if ((a[i] == ' ') || (a[i+1] == '\0'))
+        {
+            l[k]=j;
+            cout<<"| "<<l[k]<<" | ";
+            j=0;
+            k++;
         }
     }
 
-    cout <<"\nSmallest :\n| ";
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            if (c > a[j][i])
-            {
-                c = a[j][i];
-            }
-            l[i] = c;
-        }
-        c = 'Z';
-        cout<< l[i] <<" | ";
-    }
-
-    cout << endl;
+    cout<<endl;
     
     system("pause>nul");
     return 0;
