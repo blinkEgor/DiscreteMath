@@ -7,7 +7,7 @@ int main()
     const int n = 5;
     char a[n][n];
     char l[n];
-    char c = 'A';
+    char c = 'Z';
 
     srand(2);
 
@@ -22,18 +22,18 @@ int main()
         }
     }
 
-    cout <<"\nLargest:\n| ";
+    cout <<"\nSmallest :\n| ";
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            if (c < a[j][i])
+            if (c > a[j][i])
             {
                 c = a[j][i];
             }
             l[i] = c;
         }
-        c = 'A';
+        c = 'Z';
         cout<< l[i] <<" | ";
     }
 
