@@ -4,75 +4,25 @@ using namespace std;
 
 int main()
 {
-    const int m=5;
-    const int n=8;
-    const int l=3;
+    const int n=10;
+    char a[n];
+    char b[n];
 
-    int**a=new int*[m];
-    int**b=new int*[n];
-    int**c=new int*[m];
-
-    for(int i=0;i<m;i++)
-        a[i]=new int[n];
-    for(int i=0;i<n;i++)
-        b[i]=new int[l];
-    for(int i=0;i<m;i++)
-        c[i]=new int[l];
-
-    srand(2);
-
-    for(int i=0;i<m;i++)
+    cout<<"Character array:\n| ";
+    for(int i=0; i<n; i++)
     {
-        for(int j=0;j<n;j++)
-            a[i][j]=rand()%10;
+        a[i] = (char)'A' + i;
+        cout << a[i] <<" | ";
     }
-    for(int i=0;i<n;i++)
-    {
-        for(int j=0;j<l;j++)
-            b[i][j]=rand()%10;
-    }
+    cout << endl;
 
-    for(int i=0;i<m;i++)
+    cout <<"Reversible:\n| ";
+    for (int i=1; i<=n; i++)
     {
-        for(int j=0;j<l;j++)
-        {
-            c[i][j]=0;
-            for(int k=0;k<n;k++)
-                c[i][j]+=a[i][k]*b[k][j];
-        }
+        b[i] = a[n-i];
+        cout << b[i] <<" | ";
     }
-
-    cout<<"Matrix A:";
-    for(int i=0;i<m;i++)
-    {
-        cout<<"\n| ";
-        for(int j=0;j<n;j++)
-            cout<<a[i][j]<<" | ";
-    }
-    cout<<"\nMatrix B:";
-    for(int i=0;i<n;i++)
-    {
-        cout<<"\n| ";
-        for(int j=0;j<l;j++)
-            cout<<b[i][j]<<" | ";
-    }
-    cout<<"\nMatrix C:";
-    for(int i=0;i<m;i++)
-    {
-        cout<<"\n| ";
-        for(int j=0;j<l;j++)
-            cout<<c[i][j]<<" | ";
-    }
-
-    for(int i=0;i<m;i++)
-        delete[]a[i];
-    for(int i=0;i<n;i++)
-        delete[]b[i];
-    for(int i=0;i<m;i++)
-        delete[]c[i];
-    delete[]a;
-    delete[]b;
-    delete[]c;
+    cout << endl;
     
     system("pause>nul");
     return 0;
