@@ -4,38 +4,24 @@ using namespace std;
 
 int main()
 {
-    const int n = 100;
-    char a[n]="I will become a creator of games and applications";
+    srand(2);
 
-    cout<<"Display:\n"<<a<<endl;
+    int i,j;
+    int n = rand()% 10;
+    int *a = new int [n];
 
-    cout<<"How many words:\n";
-    int w=1;
-    for (int i = 0; a[i]; i++)
+    cout<<"Array:\n| ";
+    for (i=0, j=n-1; i < n; i++, j--)
     {
-        if (a[i] == ' ')
+        if (i < n-i)
         {
-            w++;
+            a[i] = i+1;
+            a[j] = i+1;   
         }
+        cout<<a[i]<<" | ";
     }
-    cout<<w<<endl;
-
-    cout<<"How many letters:\n";
-    int l[w];
-    for (int i = 0, j = 0, k = 0; a[i]; i++)
-    {
-        if (a[i] != ' ')
-        {
-            j++;
-        }
-        if ((a[i] == ' ') || (a[i+1] == '\0'))
-        {
-            l[k]=j;
-            cout<<"| "<<l[k]<<" | ";
-            j=0;
-            k++;
-        }
-    }
+    
+    delete [] a;
 
     cout<<endl;
     
